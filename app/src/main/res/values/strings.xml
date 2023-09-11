@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Statistics Quantity Calculator</string>
+    <string name="textexplanation">Insert values inside the number bar and submit when you are done.</string>
+    <string name="addbutton" translatable="false">Add</string>
+    <string name="finishbutton">Finish</string>
+    <string name="back">Back</string>
+
+    <string name="average">The average is: </string>
+    <string name="median">The median is: </string>
+    <string name="fashion">The fashion is: </string>
+    <string name="variance">The variance is: </string>
+    <string name="mean_deviation">The mean deviation is: </string>
+    <string name="standard_deviation">The standard deviation is: </string>
+
+</resources>

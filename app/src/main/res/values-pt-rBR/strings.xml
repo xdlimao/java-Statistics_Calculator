@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calculadora de Estatística Quantitativa</string>
+    <string name="textexplanation">Insira valores dentro da barra de números e envie quando terminar.</string>
+    <string name="finishbutton">Finalizar</string>
+    <string name="back">Voltar</string>
+    <string name="average">"A média é: "</string>
+    <string name="median">"A mediana é: "</string>
+    <string name="fashion">"A moda é: "</string>
+    <string name="variance">"A variância é: "</string>
+    <string name="standard_deviation">"O desvio padrão é: "</string>
+    <string name="mean_deviation">"O desvio médio é: "</string>
+</resources>
