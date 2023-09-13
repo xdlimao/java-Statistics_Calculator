@@ -15,22 +15,27 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     EditText mNumber;
-    ArrayList<String> mValues = new ArrayList<String>();
+    StatisticCalc st;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        st = new StatisticCalc();
         mNumber = findViewById(R.id.editTextNumber);
-        mValues.add("Oi");
 
         Button mAddButton = findViewById(R.id.addButton);
         mAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                addNumber();
-                Toast.makeText(getApplicationContext(), mValues.size() , Toast.LENGTH_SHORT).show();
+                st.addNumber(mNumber);
+                if (StatisticCalc.status == 0 ){
+                    Toast.makeText(getApplicationContext(), "Null.", Toast.LENGTH_SHORT).show();
+                }else if (StatisticCalc.status == 1){
+                    Toast.makeText(getApplicationContext(), "Added.", Toast.LENGTH_SHORT).show();
+                }else if (StatisticCalc.status == 2){
+                    Toast.makeText(getApplicationContext(), "Not number.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         Button mFinishButton = findViewById(R.id.finishButton);
@@ -41,21 +46,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
-    private void addNumber() {
-        String inputText = mNumber.getText().toString().trim();
-
-        if (!inputText.isEmpty()) {
-            try {
-                double number = Double.parseDouble(inputText);
-//                mValues.add(number);
-                Toast.makeText(this, "Added.", Toast.LENGTH_SHORT).show();
-                mNumber.getText().clear(); // Clear editText
-            } catch (NumberFormatException e) {
-                Toast.makeText(this, "This isn't a number.", Toast.LENGTH_SHORT).show();
-            }
-        } else {
-            Toast.makeText(this, "Empty.", Toast.LENGTH_SHORT).show();
-        }
     }
 }

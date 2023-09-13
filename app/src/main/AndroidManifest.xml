@@ -25,10 +25,10 @@
             android:name=".ResultActivity"
             android:exported="true">
         </activity>
-        <activity
-            android:name=".StatisticCalc"
-            android:exported="true">
-        </activity>
+<!--        <activity-->
+<!--            android:name=".StatisticCalc"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
     </application>
 
 </manifest>
