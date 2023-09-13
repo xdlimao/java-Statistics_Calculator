@@ -26,10 +26,10 @@ public class ResultActivity extends AppCompatActivity {
 
         mTextView1 = findViewById(R.id.textViewxd);
         mTextView2 = findViewById(R.id.textView2);
-        mTextView3 = findViewById(R.id.textView2);
-        mTextView4 = findViewById(R.id.textView2);
-        mTextView5 = findViewById(R.id.textView2);
-        mTextView6 = findViewById(R.id.textView2);
+        mTextView3 = findViewById(R.id.textView3);
+        mTextView4 = findViewById(R.id.textView4);
+        mTextView5 = findViewById(R.id.textView5);
+        mTextView6 = findViewById(R.id.textView6);
 
         Button mBackButton = findViewById(R.id.backButton);
         mBackButton.setOnClickListener(new View.OnClickListener(){
@@ -57,21 +57,14 @@ public class ResultActivity extends AppCompatActivity {
         mTextView1.setText(mediaString + " " + stn.media());
 
         mTextView2.setText(medianaString + " " + stn.mediana());
-//
 
-//        List<Double> resmoda = mStatisticCalc.moda(values);
 //        mTextView3.setText(modaString + resmoda);
-//
 
-//        double resvariancia = mStatisticCalc.variancia(values);
-//        mTextView4.setText(varianciaString + resvariancia);
-//
+        mTextView4.setText(varianciaString + " " + stn.variancia());
 
-//        double resdmedio = mStatisticCalc.desviomedio(values);
-//        mTextView5.setText(desviomedioString + resdmedio);
+        mTextView5.setText(desviomedioString + " " + stn.desviomedio());
 
-//        double resdpadrao = mStatisticCalc.desviopadrao(values);
-//        mTextView6.setText(desviopadraoString + resdpadrao);
+        mTextView6.setText(desviopadraoString + " " + stn.desviopadrao());
     }
 }
 
