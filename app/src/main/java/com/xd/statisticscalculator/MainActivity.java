@@ -16,10 +16,17 @@ public class MainActivity extends AppCompatActivity {
 
     EditText mNumber;
     StatisticCalc st;
+
+    String blankinput , added , notnumber, blankarray;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        blankinput = this.getString(R.string.blankinput);
+        added = this.getString(R.string.added);
+        notnumber = this.getString(R.string.notnumber);
+        blankarray = this.getString(R.string.blankarray);
 
         st = new StatisticCalc();
         mNumber = findViewById(R.id.editTextNumber);
@@ -30,11 +37,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 st.addNumber(mNumber);
                 if (StatisticCalc.status == 0 ){
-                    Toast.makeText(getApplicationContext(), "Null.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), blankinput, Toast.LENGTH_SHORT).show();
                 }else if (StatisticCalc.status == 1){
-                    Toast.makeText(getApplicationContext(), "Added.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), added, Toast.LENGTH_SHORT).show();
                 }else if (StatisticCalc.status == 2){
-                    Toast.makeText(getApplicationContext(), "Not number.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), notnumber, Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -42,8 +49,12 @@ public class MainActivity extends AppCompatActivity {
         mFinishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
-                startActivity(intent);
+                if (StatisticCalc.mValues.size() == 0) {
+                    Toast.makeText(getApplicationContext(), blankarray, Toast.LENGTH_SHORT).show();
+                } else {
+                    Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+                    startActivity(intent);
+                }
             }
         });
     }

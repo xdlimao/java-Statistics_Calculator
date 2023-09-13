@@ -11,5 +11,9 @@
     <string name="variance">The variance is: </string>
     <string name="mean_deviation">"The mean absolute deviation is: "</string>
     <string name="standard_deviation">The standard deviation is: </string>
+    <string name="blankinput">Blank.</string>
+    <string name="notnumber">This isn\'t a number.</string>
+    <string name="added">Added.</string>
+    <string name="blankarray">List is blank. Added something!</string>
 
 </resources>
