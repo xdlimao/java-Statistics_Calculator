@@ -1,5 +1,7 @@
 # Statistics_Calculator_for_Android
 
+[Download here!](https://github.com/xdlimao/Statistics_Calculator/releases)
+
 ENG
 A calculator that performs statistical calculations using only quantitative values!
 I created it to help me with a math assignment at school.
