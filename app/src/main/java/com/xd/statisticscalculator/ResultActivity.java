@@ -72,4 +72,3 @@ public class ResultActivity extends AppCompatActivity {
         mTextView6.setText(desviopadraoString + " " + stn.desviopadrao());
     }
 }
-

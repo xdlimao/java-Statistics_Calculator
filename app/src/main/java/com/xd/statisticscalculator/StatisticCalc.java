@@ -1,14 +1,11 @@
 package com.xd.statisticscalculator;
 
-import android.util.Log;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+
 
 public class StatisticCalc {
 
@@ -53,8 +50,30 @@ public class StatisticCalc {
             return mValues.get(intconverted);
         }
     }
-    public int moda(){
-        return 0;
+    public Map moda(){
+        Map arrayValues = new HashMap();
+
+        //Adicionar valores ao HashMap a partir do mValues e conta quantas vezes repetiu
+        for (int i = 0; i < mValues.size(); i++){
+            if(arrayValues.containsKey(mValues.get(i))){
+                //Esse if é para fazer +1 no value do HashMap
+                arrayValues.put(mValues.get(i), new Integer(((Integer)arrayValues.get(mValues.get(i))).intValue() + 1));
+            } else {
+                arrayValues.put(mValues.get(i), new Integer(1));
+            }
+        }
+
+        //Comparador de tamanhos, caso acho os maior/maiores, adiciona em uma string
+        //Pegar x e passar por todo o array, se o index dele for 0, ele é o maior de todos
+        //Caso tenha dois ou mais com index 0, fazer a mesma coisa
+        //Usar um array para armazenar esses valores e transformar em uma String.
+        //Mas se caso o array inteiro for do mesmo tamanho do HashMap, ele é amodal
+        //Ai ao invez de devolver um valor, escrever amodal
+        //fazer também caso seja unimodal, bimodal e polimodal (opcional)
+
+        //Under construction
+
+        return arrayValues;
     }
     public double variancia (){
         double media = media();

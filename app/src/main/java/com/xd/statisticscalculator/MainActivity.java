@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                     count++;
                 }else if (StatisticCalc.status == 2){
                     Toast.makeText(getApplicationContext(), notnumber, Toast.LENGTH_SHORT).show();
+                    mNumber.getText().clear();
                 }
             }
         });
@@ -78,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
         Button mFinishButton = findViewById(R.id.finishButton);
         mFinishButton.setOnClickListener(new View.OnClickListener() {
             @Override
