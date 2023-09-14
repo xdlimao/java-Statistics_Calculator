@@ -79,8 +79,8 @@
 
     <Button
         android:id="@+id/backButton"
-        android:layout_width="80dp"
-        android:layout_height="60dp"
+        android:layout_width="109dp"
+        android:layout_height="57dp"
         android:text="@string/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
