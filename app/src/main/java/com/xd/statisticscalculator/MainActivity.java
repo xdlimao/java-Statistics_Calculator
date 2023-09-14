@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -57,6 +58,28 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //OK do teclado
+        mNumber.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER || keyCode == KeyEvent.KEYCODE_NUMPAD_ENTER)) {
+                    st.addNumber(mNumber);
+                    if (StatisticCalc.status == 0 ){
+                        Toast.makeText(getApplicationContext(), blankinput, Toast.LENGTH_SHORT).show();
+                    }else if (StatisticCalc.status == 1){
+                        Toast.makeText(getApplicationContext(), added, Toast.LENGTH_SHORT).show();
+                        mResults.setText("" + mResults.getText() + StatisticCalc.mValues.get(count) + "; ");
+                        count++;
+                    }else if (StatisticCalc.status == 2){
+                        Toast.makeText(getApplicationContext(), notnumber, Toast.LENGTH_SHORT).show();
+                        mNumber.getText().clear();
+                    }
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        });
         Button mRemoveButton = findViewById(R.id.removeButton);
         mRemoveButton.setOnClickListener(new View.OnClickListener() {
             @Override
