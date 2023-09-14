@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Collections;
+
 
 public class ResultActivity extends AppCompatActivity {
     StatisticCalc stn;
@@ -21,6 +23,9 @@ public class ResultActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.result_activity);
+
+        Collections.sort(StatisticCalc.mValues); //Deixa o array em ordem crescente
+
 
         stn = new StatisticCalc();
 

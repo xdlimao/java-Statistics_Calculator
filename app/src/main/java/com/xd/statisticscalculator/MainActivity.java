@@ -7,21 +7,29 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    int count;
     EditText mNumber;
+    TextView mResults;
     StatisticCalc st;
-
     String blankinput , added , notnumber, blankarray;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        count = 0;
+
+        mResults = findViewById(R.id.resultTextView);
 
         blankinput = this.getString(R.string.blankinput);
         added = this.getString(R.string.added);
@@ -40,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), blankinput, Toast.LENGTH_SHORT).show();
                 }else if (StatisticCalc.status == 1){
                     Toast.makeText(getApplicationContext(), added, Toast.LENGTH_SHORT).show();
+                    mResults.setText("" + mResults.getText() + StatisticCalc.mValues.get(count) + "; ");
+                    count++;
                 }else if (StatisticCalc.status == 2){
                     Toast.makeText(getApplicationContext(), notnumber, Toast.LENGTH_SHORT).show();
                 }

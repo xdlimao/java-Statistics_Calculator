@@ -22,7 +22,6 @@ public class StatisticCalc {
             try {
                 double number = Double.parseDouble(inputText);
                 mValues.add(number);
-                Collections.sort(mValues);
                 mNumber.getText().clear();
                 status = 1;
             } catch (NumberFormatException e) {
