@@ -32,6 +32,10 @@ public class StatisticCalc {
         }
     }
 
+    public void removeNumber(int count) {
+            mValues.remove(count);
+    }
+
     public double media (){
         int count = 0;
         double sum = 0;
@@ -49,7 +53,9 @@ public class StatisticCalc {
             return mValues.get(intconverted);
         }
     }
-
+    public int moda(){
+        return 0;
+    }
     public double variancia (){
         double media = media();
         int count = 0;

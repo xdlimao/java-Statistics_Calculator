@@ -63,7 +63,7 @@ public class ResultActivity extends AppCompatActivity {
 
         mTextView2.setText(medianaString + " " + stn.mediana());
 
-//        mTextView3.setText(modaString + resmoda);
+        mTextView3.setText(modaString + " " + stn.moda());
 
         mTextView4.setText(varianciaString + " " + stn.variancia());
 

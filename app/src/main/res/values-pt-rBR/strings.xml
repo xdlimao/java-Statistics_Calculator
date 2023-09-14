@@ -11,7 +11,9 @@
     <string name="standard_deviation">"O desvio padrão é: "</string>
     <string name="mean_deviation">"O desvio médio é: "</string>
     <string name="blankinput">Vázio.</string>
-    <string name="notnumber">Isto não é um número</string>
+    <string name="notnumber">Isto não é um número.</string>
     <string name="added">Adicionado.</string>
     <string name="blankarray">Lista está vázia. Adicione!</string>
+    <string name="removebutton">Remover</string>
+    <string name="removed">Removido.</string>
 </resources>

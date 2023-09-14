@@ -15,5 +15,7 @@
     <string name="notnumber">This isn\'t a number.</string>
     <string name="added">Added.</string>
     <string name="blankarray">List is blank. Added something!</string>
+    <string name="removebutton">Remove</string>
+    <string name="removed">Removed.</string>
 
 </resources>

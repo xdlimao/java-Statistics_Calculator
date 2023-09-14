@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,22 +18,21 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    int count;
+    int count = 0;
     EditText mNumber;
     TextView mResults;
     StatisticCalc st;
-    String blankinput , added , notnumber, blankarray;
+    String blankinput, added, removed, notnumber, blankarray;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        count = 0;
-
         mResults = findViewById(R.id.resultTextView);
 
         blankinput = this.getString(R.string.blankinput);
         added = this.getString(R.string.added);
+        removed = this.getString(R.string.removed);
         notnumber = this.getString(R.string.notnumber);
         blankarray = this.getString(R.string.blankarray);
 
@@ -52,6 +52,29 @@ public class MainActivity extends AppCompatActivity {
                     count++;
                 }else if (StatisticCalc.status == 2){
                     Toast.makeText(getApplicationContext(), notnumber, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        Button mRemoveButton = findViewById(R.id.removeButton);
+        mRemoveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(StatisticCalc.mValues.size() > 0){
+                    String numberString = String.valueOf(StatisticCalc.mValues.get(count-1));
+                    String arrayListString = mResults.getText().toString();
+                    int numberLength = numberString.length() + 2; // Esses mais dois é para o "; "
+
+                    // Não entendi ainda como funciona o endIndex do substring...
+                    String newText = arrayListString.substring(0, arrayListString.length() - numberLength);
+
+                    mResults.setText(newText);
+                    st.removeNumber(count-1);
+                    Toast.makeText(getApplicationContext(), removed, Toast.LENGTH_SHORT).show();
+                    count = count - 1;
+
+                } else {
+                    Toast.makeText(getApplicationContext(), blankarray, Toast.LENGTH_SHORT).show();
                 }
             }
         });
